@@ -21,7 +21,7 @@ namespace ElevenNoteRedBadge.WebMVC.Controllers
             var service = new NoteService(userId);
             var model = service.GetNotes();
 
-            return View();
+            return View(model);
         }
 
         //GET
@@ -34,7 +34,7 @@ namespace ElevenNoteRedBadge.WebMVC.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create(NoteCreate model)
         {
-            if (ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid) return View(model);
 
             var service = CreateNoteService();
 
@@ -93,6 +93,29 @@ namespace ElevenNoteRedBadge.WebMVC.Controllers
 
             ModelState.AddModelError("", "Your note could not be updated");
             return View();
+        }
+
+        [ActionName("Delete")]
+        public ActionResult Delete(int id)
+        {
+            var svc = CreateNoteService();
+            var model = svc.GetNoteById(id);
+
+            return View(model);
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeletePost(int id)
+        {
+            var service = CreateNoteService();
+
+            service.DeleteNote(id);
+
+            TempData["SaveResult"] = "Your note was deleted";
+
+            return RedirectToAction("Index");
         }
 
         private NoteService CreateNoteService()
