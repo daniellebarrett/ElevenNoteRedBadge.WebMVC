@@ -55,9 +55,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
-    <Compile Include="Migrations\202103271743430_Initial Migration.cs" />
-    <Compile Include="Migrations\202103271743430_Initial Migration.Designer.cs">
-      <DependentUpon>202103271743430_Initial Migration.cs</DependentUpon>
+    <Compile Include="Migrations\202103310218461_StarNoteMigration.cs" />
+    <Compile Include="Migrations\202103310218461_StarNoteMigration.Designer.cs">
+      <DependentUpon>202103310218461_StarNoteMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -68,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202103271743430_Initial Migration.resx">
-      <DependentUpon>202103271743430_Initial Migration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202103310218461_StarNoteMigration.resx">
+      <DependentUpon>202103310218461_StarNoteMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
