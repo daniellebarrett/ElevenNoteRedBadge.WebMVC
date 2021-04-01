@@ -66,10 +66,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Category.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Migrations\202103310218461_StarNoteMigration.cs" />
     <Compile Include="Migrations\202103310218461_StarNoteMigration.Designer.cs">
       <DependentUpon>202103310218461_StarNoteMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104012209003_CategoryMigration.cs" />
+    <Compile Include="Migrations\202104012209003_CategoryMigration.Designer.cs">
+      <DependentUpon>202104012209003_CategoryMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Note.cs" />
@@ -82,6 +87,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202103310218461_StarNoteMigration.resx">
       <DependentUpon>202103310218461_StarNoteMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104012209003_CategoryMigration.resx">
+      <DependentUpon>202104012209003_CategoryMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
