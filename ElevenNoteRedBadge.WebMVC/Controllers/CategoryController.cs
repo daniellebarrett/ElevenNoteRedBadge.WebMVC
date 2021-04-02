@@ -16,5 +16,23 @@ namespace ElevenNoteRedBadge.WebMVC.Controllers
             var model = new CategoryListItem[0];
             return View();
         }
+
+        //GET
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(CategoryCreate model)
+        {
+            if (!ModelState.IsValid)
+            {
+
+            }
+
+            return View(model);
+        }
     }
 }
